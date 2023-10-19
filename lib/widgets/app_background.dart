@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_todo_app/utils/utils.dart';
 
 class AppBackground extends StatelessWidget {
-  const AppBackground({super.key, this.header, this.body, this.headerHeight});
+  const AppBackground({Key? key, this.header, this.body, this.headerHeight});
+
   final Widget? body;
   final Widget? header;
   final double? headerHeight;
@@ -17,7 +18,12 @@ class AppBackground extends StatelessWidget {
         Container(
           height: headerHeight,
           width: deviceSize.width,
-          color: colors.primary,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/image/5329108.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Center(child: header),
         ),
         Expanded(

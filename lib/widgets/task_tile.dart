@@ -9,11 +9,13 @@ class TaskTile extends StatelessWidget {
     super.key,
     required this.task,
     this.onCompleted,
+    this.onDelete,
   });
 
   final Task task;
 
   final Function(bool?)? onCompleted;
+  final VoidCallback? onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +73,11 @@ class TaskTile extends StatelessWidget {
             //     return colors.primary;
             //   },
             // ),
+          ),
+          IconButton(
+            onPressed: onDelete,
+            icon: Icon(Icons.delete),
+            color: Colors.blue,
           ),
         ],
       ),
